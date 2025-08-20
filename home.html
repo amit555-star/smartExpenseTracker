@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker Home</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Link to your home page CSS -->
+</head>
+<body>
+
+    <div class="mobile-screen-wrapper">
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+            <h4 id="greeting" class="m-0">Hello!</h4>
+            <div class="nav-actions">
+                <i class="bi bi-bell-fill icon"></i>
+                <i class="bi bi-box-arrow-right icon logout-icon" title="Logout"></i>
+            </div>
+        </nav>
+
+        <!-- Balance Card -->
+        <div class="balance-card">
+            <div class="balance-header">
+                <h5>Available Balance</h5>
+            </div>
+            <div class="total-balance">
+                <span id="totalBalanceAmount">0.00</span>
+                <i class="bi bi-chevron-down" style="font-size: 16px; margin-left: 10px; cursor: pointer;" id="chevron-down"></i>
+            </div>
+
+            <div class="income-expense-summary">
+                <div class="summary-item">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-arrow-trend-down trend-down"></i>
+                    </div>
+                    <div class="item-info">
+                        <small>Income</small>
+                        <span id="incomeAmount">0.00</span>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-arrow-trend-up trend-up"></i>
+                        
+                    </div>
+                    <div class="item-info">
+                        <small>Expenses</small>
+                        <span id="expenseAmount">0.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transactions History Section -->
+        <section class="transactions-section">
+            <div class="transactions-header">
+                <h3>Recent Transactions</h3>
+                <a href="#" class="see-all">See All</a>
+            </div>
+            <ul class="transactions-list" id="transactionsList">
+                <!-- Transactions will be loaded here by JavaScript -->
+            </ul>
+        </section>
+
+        <!-- Bottom Navigation Bar -->
+        <nav class="bottom-nav-bar">
+            <a href="#" class="nav-item active">
+                <i class="bi bi-house-fill"></i>
+                Home
+            </a>
+            <a href="#" class="nav-item">
+                <i class="bi bi-bar-chart-fill"></i>
+                Activity
+            </a>
+            <!-- Placeholder for the plus button, it's absolutely positioned -->
+            <div style="width: 60px;"></div>
+            <a href="#" class="nav-item">
+                <i class="bi bi-wallet-fill"></i>
+                Wallet
+            </a>
+            <a href="#" class="nav-item">
+                <i class="bi bi-person-fill"></i>
+                Profile
+            </a>
+        </nav>
+
+        <!-- Plus Button (Absolute positioned) -->
+        <button class="add-button" id="openAddTransactionForm">
+            <i class="fa-solid fa-plus" style="color: #f5f5f5;"></i>
+        </button>
+
+    </div>
+
+    <!-- Bootstrap JS (bundle includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/home.js"></script> <!-- ONLY home.js should be here -->
+</body>
+</html>

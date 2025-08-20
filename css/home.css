@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background-color: #e6e0f8; /* Light purple background for the mobile app frame */
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    padding-bottom: 55px; /* Space for fixed bottom nav */
+    position: relative; /* For absolute positioning of bottom nav */
+}
+
+.mobile-screen-wrapper {
+    background-color: #ffffff; /* Inner white screen background */
+    border-radius: 30px; /* Rounded corners for the screen */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    max-width: 450px; /* Typical phone width */
+    width: 100%; /* Take full width within its container */
+    min-height: 100vh; /* Make screen wrapper take full height */
+    padding: 20px 15px; /* Padding inside the screen */
+    position: relative;
+    overflow-y: auto; /* Enable scrolling for content */
+}
+
+/* Top Navigation */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+.nav-actions i {
+    margin: 0.3rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: #7d5fff; /* Purple icon color */
+}
+
+.top-nav h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #7d5fff;
+    margin-right: auto;
+}
+
+/* Balance Card */
+.balance-card {
+    background: linear-gradient(45deg, #631fc2, #e98df5, rgb(236, 129, 90)); /* Purple gradient */
+    color: #fff;
+    border-radius: 20px;
+    padding: 25px 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(138, 43, 226, 0.3);
+    position: relative;
+}
+
+.balance-header {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.balance-header h5 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    opacity: 0.8;
+    margin: 0;
+}
+
+.total-balance {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center total balance */
+}
+
+.income-expense-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  
+    
+}
+
+.summary-item .icon-wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-bottom: 8px;
+    background: rgba(255, 255, 255, 0.2);
+
+}
+
+.summary-item .icon-wrapper .bi {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.icon-wrapper .trend-down {
+    color: #9af89e;
+}
+
+.icon-wrapper .trend-up {
+    color: #f435be;
+    
+}
+
+.summary-item span {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.summary-item small {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* Transactions Section */
+.transactions-section {
+    margin-bottom: 80px; /* Space above the fixed bottom nav */
+}
+
+.transactions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.transactions-header h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.transactions-header .see-all {
+    color: #7d5fff; /* Purple color for 'See All' */
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.transactions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0; /* Light separator */
+    cursor: pointer; /* Indicate clickable for editing */
+    transition: background-color 0.2s ease;
+}
+.transaction-item:hover {
+    background-color: #fcfcfc; /* Light hover effect */
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.transaction-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+    flex-shrink: 0; /* Prevent avatar from shrinking */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #efedfd; /* Light background for avatar circle */
+    color: #7d5fff;
+    font-size: 1.5rem;
+}
+.transaction-avatar.income-icon {
+    background-color: rgba(76, 175, 80, 0.1); /* Green tint */
+    color: #4CAF50;
+}
+.transaction-avatar.expense-icon {
+    background-color: rgba(255, 77, 77, 0.1); /* Red tint */
+    color: #ff4d4d;
+}
+
+.transaction-details {
+    flex-grow: 1; /* Take remaining space */
+}
+
+.transaction-details h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 3px 0;
+}
+
+.transaction-details small {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.transaction-amount-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align amount and delete button to the right */
+}
+
+.transaction-amount {
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-align: right;
+    flex-shrink: 0; /* Prevent amount from shrinking */
+}
+
+.transaction-amount.expense {
+    color: #ff4d4d; /* Red for expense */
+}
+
+.transaction-amount.income {
+    color: #4CAF50; /* Green for income */
+}
+
+.transaction-delete-btn {
+    background: none;
+    border: none;
+    color: #dc3545; /* Bootstrap red */
+    font-size: 0.8rem;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding: 0;
+}
+.transaction-delete-btn:hover {
+    color: #c82333;
+}
+
+/* Bottom Navigation */
+.bottom-nav-bar {
+    bottom: 0px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 450px; /* Match mobile screen width */
+    background-color: #ffffff;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    z-index: 1000; /* Ensure it's on top */
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #888; /* Default icon color */
+    font-size: 0.75rem;
+    transition: color 0.2s ease;
+}
+
+.nav-item .bi {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.nav-item.active {
+    color: #7d5fff; /* Active icon color */
+}
+
+/* Plus Button */
+.add-button {
+    position: fixed;
+    bottom: 20px; /* Position above the bottom nav */
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #6a4bff, #9e58ff); /* Purple gradient */
+    color: #fff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    box-shadow: 0 8px 20px rgba(106, 75, 255, 0.4);
+    z-index: 1001; /* Ensure it's above the bottom nav */
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s ease;
+}
+
+.add-button:hover {
+    transform: translateX(-50%) translateY(-3px);
+    box-shadow: 0 12px 25px rgba(106, 75, 255, 0.5);
+}
+
+/* Modals for messages */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    visibility: hidden; /* Hidden by default */
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s;
+}
+.modal-overlay.show {
+    visibility: visible;
+    opacity: 1;
+}
+.custom-modal {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 350px;
+    width: 90%;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+.modal-overlay.show .custom-modal {
+    transform: translateY(0);
+}
+.custom-modal h5 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+.custom-modal p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 25px;
+}
+.custom-modal button {
+    background-color: #7d5fff;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+.custom-modal button:hover {
+    background-color: #6a4bff;
+}
+
+/* Loading Spinner */
+.loading-spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s;
+}
+.loading-spinner-overlay.show {
+    visibility: visible;
+    opacity: 1;
+}
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+    color: #7d5fff;
+} 
