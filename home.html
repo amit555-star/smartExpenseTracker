@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/home.css"> <!-- Link to your home page CSS -->
+    <link rel="stylesheet" href="css/home.css"> 
+    <link rel="stylesheet" href="css/currency.css">
 </head>
 <body>
 
@@ -55,6 +56,81 @@
             </div>
         </div>
 
+        <!-- Currency Exchange -->
+            <div class="currency-exchange">
+                <h3 class="section-title">Currency Exchange</h3>
+                <div class="exchange-card">
+                    <div class="exchange-content">
+                        
+                        <!-- Currency Selection -->
+                        <div class="currency-selection">
+                            <label class="form-label">Select Currencies</label>
+                            <div class="currency-row">
+                                <select class="currency-select" id="fromCurrency">
+                                    <option value="USD">🇺🇸 USD</option>
+                                    <option value="EUR">🇪🇺 EUR</option>
+                                    <option value="GBP">🇬🇧 GBP</option>
+                                    <option value="JPY">🇯🇵 JPY</option>
+                                    <option value="CAD">🇨🇦 CAD</option>
+                                    <option value="AUD">🇦🇺 AUD</option>
+                                    <option value="CHF">🇨🇭 CHF</option>
+                                    <option value="CNY">🇨🇳 CNY</option>
+                                    <option value="INR">🇮🇳 INR</option>
+                                    <option value="NPR">🇳🇵 NPR</option>
+                                </select>
+                                
+                                <button class="swap-btn" id="swapBtn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M8 3 4 7l4 4"/>
+                                        <path d="M4 7h16"/>
+                                        <path d="m16 21 4-4-4-4"/>
+                                        <path d="M20 17H4"/>
+                                    </svg>
+                                </button>
+                                
+                                <select class="currency-select" id="toCurrency">
+                                    <option value="USD">🇺🇸 USD</option>
+                                    <option value="EUR">🇪🇺 EUR</option>
+                                    <option value="GBP" selected>🇬🇧 GBP</option>
+                                    <option value="JPY">🇯🇵 JPY</option>
+                                    <option value="CAD">🇨🇦 CAD</option>
+                                    <option value="AUD">🇦🇺 AUD</option>
+                                    <option value="CHF">🇨🇭 CHF</option>
+                                    <option value="CNY">🇨🇳 CNY</option>
+                                    <option value="INR">🇮🇳 INR</option>
+                                    <option value="NPR">🇳🇵 NPR</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Amount Conversion -->
+                        <div class="amount-conversion">
+                            <div class="amount-row">
+                                  <input type="number" class="amount-input" id="inputAmount" value="0" placeholder="Enter amount">
+                                <div class="to-indicator">
+                                    <span>TO</span>
+                                </div>
+                              
+
+                                <input type="text" class="result-input" id="resultAmount" readonly value="0" placeholder="Result">
+                            </div>
+                        </div>
+
+                        <!-- Exchange Rate Display -->
+                        <div class="exchange-rate">
+                            <p class="rate-text" id="rateDisplay">
+                                <span class="flag">🇺🇸</span>
+                                <span class="rate-info">1 USD = 0.7300 GBP</span>
+                                <span class="flag">🇬🇧</span>
+                            </p>
+                            <div class="rate-divider"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
         <!-- Transactions History Section -->
         <section class="transactions-section">
             <div class="transactions-header">
@@ -98,5 +174,6 @@
     <!-- Bootstrap JS (bundle includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/home.js"></script> <!-- ONLY home.js should be here -->
+    <script src="js/currency.js"></script>
 </body>
 </html>

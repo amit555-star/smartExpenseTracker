@@ -1,0 +1,267 @@
+/* CSS Custom Properties */
+:root {
+    --gradient-purple: #9966ff;
+    --gradient-pink: #ff80bf;
+    --gradient-orange: #ff9955;
+    --success-color: #16a34a;
+    --danger-color: #dc2626;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-500: #6b7280;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    --white: #ffffff;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.currency-exchange {
+    margin-bottom: 24px;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 16px;
+}
+
+.exchange-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-100);
+    position: relative;
+    z-index: 5;
+    overflow: visible;
+}
+
+.exchange-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    overflow: visible;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-700);
+    margin-bottom: 12px;
+}
+
+.currency-selection {
+    position: relative;
+    z-index: 10;
+}
+
+.amount-conversion {
+    position: relative;
+    z-index: 5;
+}
+
+/* Currency Selection Row */
+.currency-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 10;
+}
+
+.currency-select {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    background: var(--white);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    z-index: 20;
+    /* Ensure dropdown opens downward */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+.currency-select:hover {
+    box-shadow: var(--shadow-md);
+    z-index: 25;
+}
+
+.currency-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--gradient-purple);
+    border-color: var(--gradient-purple);
+    z-index: 30;
+}
+
+.currency-select:focus option {
+    background: var(--white);
+    color: var(--gray-900);
+}
+
+/* Ensure select dropdown appears above other elements */
+.currency-select option {
+    background: var(--white);
+    color: var(--gray-900);
+    padding: 8px 12px;
+    border: none;
+}
+
+.swap-btn {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--gradient-purple), var(--gradient-pink));
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-lg);
+    flex-shrink: 0;
+}
+
+.swap-btn:hover {
+    box-shadow: var(--shadow-xl);
+    transform: scale(1.05) rotate(180deg);
+}
+
+.swap-btn svg {
+    color: white;
+}
+
+/* Amount Conversion */
+.amount-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.result-input {
+    flex: 1;
+    padding: 5px 6px;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ecfdf5, #eff6ff);
+    color: var(--gray-800);
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: var(--shadow-sm);
+}
+
+.to-indicator {
+    flex-shrink: 0;
+    padding: 4px 8px;
+    background: linear-gradient(135deg, #f3e8ff, #fce7f3);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-700);
+    box-shadow: var(--shadow-sm);
+}
+
+.amount-input {
+    flex: 1;
+    padding: 5px 6px;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    background: var(--white);
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.amount-input:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.amount-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--gradient-purple);
+    border-color: var(--gradient-purple);
+}
+
+/* Exchange Rate Display */
+.exchange-rate {
+    background: linear-gradient(135deg, #faf5ff, #fdf2f8, #fef3e2);
+    border-radius: 12px;
+    padding: 12px;
+    border: 1px solid #e9d5ff;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.rate-text {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.flag {
+    font-size: 18px;
+}
+
+.rate-divider {
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(135deg, var(--gradient-purple), var(--gradient-orange));
+    border-radius: 2px;
+    margin: 8px auto 0;
+}
+
+/* Responsive Design */
+@media (max-width: 450px) {
+    .dashboard {
+        padding: 0 12px;
+    }
+    
+    .header {
+        padding: 36px 0 12px;
+    }
+    
+    .greeting {
+        font-size: 20px;
+    }
+    
+    .exchange-card {
+        padding: 16px;
+    }
+    
+    .currency-row {
+        gap: 8px;
+    }
+    
+    .amount-row {
+        gap: 6px;
+    }
+
+   .result-input,
+    .amount-input {
+        width: 50%;
+   }
+}
